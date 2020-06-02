@@ -1,0 +1,4 @@
+rootProject.name='MyAnnoSample'
+include ':app'
+include ':anno'
+include ':comp'
