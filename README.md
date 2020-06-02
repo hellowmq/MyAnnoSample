@@ -6,7 +6,7 @@ JUST FOR LEARNING.
 
 ### About the Reference
 
-The feference article is [Here](https://medium.com/@iammert/annotation-processing-dont-repeat-yourself-generate-your-code-8425e60c6657)
+The reference article is [Here](https://medium.com/@iammert/annotation-processing-dont-repeat-yourself-generate-your-code-8425e60c6657)
 
 ### FAQ
 
