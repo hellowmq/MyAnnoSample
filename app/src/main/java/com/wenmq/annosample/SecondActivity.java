@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,7 +15,7 @@ import com.wenmq.anno.NewIntent;
 
 
 @NewIntent(path = RouterPath.Activity.Path_SecondActivity)
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends BaseActivity {
 
 
     @Override
