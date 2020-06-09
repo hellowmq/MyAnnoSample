@@ -47,7 +47,7 @@ public class LifecycleClassVisitor extends ClassVisitor implements Opcodes {
     private boolean isEqualsActivity(String p) {
 //        if ("androidx/fragment/app/FragmentActivity".equals(p)) return true;
         if ("android/support/v4/app/FragmentActivity".equals(p)) return true;
-        if ("com/wenmq/annosample/BaseActivity" == p) return true;
+        if ("com/wenmq/annosample/BaseActivity".equals(p)) return true;
 //        if ("androidx/appcompat/app/AppCompatActivity" == p) return true;
         return false;
     }

@@ -70,7 +70,6 @@ class MTaskInjectPlugin extends Transform implements Plugin<Project> {
                 handleJarInputs(jarInput, outputProvider)
             }
 
-            println "jar $inputs"
         }
         def cost = (System.currentTimeMillis() - startTime) / 1000
         println '--------------- LifecyclePlugin visit end --------------- '
@@ -176,6 +175,7 @@ class MTaskInjectPlugin extends Transform implements Plugin<Project> {
     private static boolean isEqualsActivity(String p) {
 //        if ("androidx/fragment/app/FragmentActivity.class" == p) return true;
 //        if ("androidx/appcompat/app/AppCompatActivity.class" == p) return true;
+        if ("BaseActivity.class" == p) return true;
         if ("com/wenmq/annosample/BaseActivity.class" == p) return true;
         if ("android/support/v4/app/FragmentActivity.class" == p) return true;
 //        if ("androidx/fragment/app/FragmentActivity" == p) return true;
