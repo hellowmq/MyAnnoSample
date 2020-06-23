@@ -4,7 +4,9 @@ buildscript {
     
     repositories {
         maven { url "${rootProject.projectDir}/repository" }
-
+        maven {
+            url "https://dl.bintray.com/zhangsl/maven"
+        }
         google()
         jcenter()
 
@@ -21,6 +23,9 @@ buildscript {
 allprojects {
     repositories {
         maven { url "${rootProject.projectDir}/repository" }
+        maven {
+            url "https://dl.bintray.com/zhangsl/maven"
+        }
         google()
         jcenter()
         
