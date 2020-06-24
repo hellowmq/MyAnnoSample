@@ -1,4 +1,4 @@
-package com.wenmq.annosample;
+package com.wenmq.annosample.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.wenmq.anno.NewIntent;
-
+import com.wenmq.annosample.R;
 
 
 @NewIntent(path = RouterPath.Activity.Path_SecondActivity)

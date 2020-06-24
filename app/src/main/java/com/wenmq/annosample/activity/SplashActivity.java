@@ -1,4 +1,4 @@
-package com.wenmq.annosample;
+package com.wenmq.annosample.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.wenmq.anno.NewIntent;
+import com.wenmq.annosample.R;
 import com.wenmq.annotationsample.ANavigator;
 
 

@@ -1,7 +1,7 @@
-package com.wenmq.annosample;
+package com.wenmq.annosample.activity;
 
 public class RouterPath {
-    interface Activity{
+    public interface Activity{
         String Path_MainActivity = "/main/mainPage";
         String Path_SecondActivity = "/main/secondPage";
         String Path_SplashActivity = "/main/splash";

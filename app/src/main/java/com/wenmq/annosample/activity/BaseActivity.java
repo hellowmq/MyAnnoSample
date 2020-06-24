@@ -1,5 +1,6 @@
-package com.wenmq.annosample;
+package com.wenmq.annosample.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * @date 2020/6/8
  * @description
  */
+@SuppressLint("Registered")
 public class BaseActivity extends AppCompatActivity {
 
 

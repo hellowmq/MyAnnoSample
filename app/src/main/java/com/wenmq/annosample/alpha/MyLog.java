@@ -20,7 +20,7 @@ import android.util.Log;
 
 /**
  * <p>日志输出类，其函数和{@link Log}基本一致。</p>
- *
+ * <p>
  * Created by zhangshuliang.zsl on 15/8/24.
  */
 public class MyLog {
@@ -45,6 +45,10 @@ public class MyLog {
         String formattedMsg = String.format(msg, args);
         mLogString.append(formattedMsg).append("\n");
         Log.d(tag, formattedMsg);
+    }
+
+    public static synchronized void clear() {
+        mLogString = new StringBuilder();
     }
 
     public static void e(String tag, Object obj) {
