@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.wenmq.mtask.plugin'
 
+apply plugin: 'auto-inject'
+
+autoInject {
+    showLog = true
+    ignorePackages = ['android', 'com/google']
+}
+
+
 android {
     compileSdkVersion 29
 
@@ -42,4 +50,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.alibaba.android:alpha:1.0.0.1@aar'
+    implementation project(path: ':mt-kernel')
+    implementation 'com.eastwood.common:auto-inject:1.0.0'
 }
