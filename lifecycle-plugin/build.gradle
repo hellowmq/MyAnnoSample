@@ -1,0 +1,42 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //gradle sdk
+    implementation gradleApi()
+    //groovy sdk
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.6.3'
+    implementation 'com.android.tools.build:gradle-api:3.6.3'
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+//group和version在后面使用自定义插件的时候会用到
+
+def groupId = 'com.wenmq.lifecycle.plugin'
+def version = '1.0.0'
+def artifactId = 'wenmq'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //提交到远程服务器：
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "admin", password: "admin")
+            // }
+            //本地的Maven地址:当前工程下
+            repository(url: uri('../repository'))
+            pom.groupId = groupId  //groupId ，自行定义，一般是包名
+            pom.artifactId = artifactId //artifactId ，自行定义
+            pom.version = version //version 版本号
+        }
+    }
+}

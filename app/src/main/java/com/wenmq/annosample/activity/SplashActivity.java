@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
-import com.wenmq.anno.NewIntent;
+import com.wenmq.router.NewIntent;
 import com.wenmq.annosample.R;
 import com.wenmq.annotationsample.ANavigator;
 

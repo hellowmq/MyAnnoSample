@@ -2,7 +2,7 @@ package com.wenmq.annosample;
 
 import android.app.Application;
 
-import com.eastwood.common.autoinject.AutoTarget;
+//import com.eastwood.common.autoinject.AutoTarget;
 import com.wenmq.annosample.alpha.MyLog;
 import com.wenmq.mtask.mtask_kernel.MReceptors;
 
@@ -26,7 +26,7 @@ public class MyApplication extends Application {
 
 
     @MReceptors(receptorAddress = "App")
-    @AutoTarget(name = "application")
+//    @AutoTarget(name = "application")
     public void onAppCreate() {
 
 

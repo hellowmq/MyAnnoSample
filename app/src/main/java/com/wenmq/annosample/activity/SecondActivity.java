@@ -10,7 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.wenmq.anno.NewIntent;
+import com.wenmq.router.NewIntent;
 import com.wenmq.annosample.R;
 
 

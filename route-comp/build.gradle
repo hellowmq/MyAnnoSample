@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'com.google.guava:guava:21.0'
+    implementation 'com.google.auto.service:auto-service:1.0-rc4'
+//    In the Gradle 5.0 project， annotationProcessor will be ignored
+//    Add annotationProcessor '***' manually
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
+    implementation 'com.squareup:javapoet:1.11.1'
+    implementation project(':route-anno')
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+//sourceCompatibility = "7"
+//targetCompatibility = "7"

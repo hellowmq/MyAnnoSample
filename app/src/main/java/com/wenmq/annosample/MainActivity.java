@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.widget.TextView;
 
 import com.alibaba.android.alpha.OnProjectExecuteListener;
-import com.wenmq.anno.NewIntent;
+import com.wenmq.router.NewIntent;
 import com.wenmq.annosample.activity.BaseActivity;
 import com.wenmq.annosample.activity.RouterPath;
 import com.wenmq.annosample.alpha.ConfigTest;
