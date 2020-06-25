@@ -10,17 +10,11 @@ repositories {
 
 dependencies {
 
-    compile gradleApi()
-    compile localGroovy()
-    compile 'com.android.tools.build:gradle:3.2.1'
-    compile 'org.ow2.asm:asm:6.0'
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.6.3'
+    implementation 'org.ow2.asm:asm:6.0'
 }
-
-apply plugin: 'maven'
-
-def groupId = 'com.eastwood.tools.plugins'
-def artifactId = 'auto-inject'
-def version = '1.0.3'
 
 def localReleaseDest = "${buildDir}/release/${version}"
 
@@ -33,6 +27,12 @@ task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
 }
+apply plugin: 'maven'
+
+def groupId = 'com.eastwood.tools.plugins'
+def artifactId = 'autoinject'
+def version = '1.0.0'
+
 
 uploadArchives {
     repositories {
@@ -41,7 +41,12 @@ uploadArchives {
             pom.artifactId = artifactId
             pom.version = version
             // Add other pom properties here if you want (developer details / licenses)
-            repository(url: "file://${localReleaseDest}")
+            //提交到远程服务器：
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "admin", password: "admin")
+            // }
+            //本地的Maven地址:当前工程下
+            repository(url: uri('../repository'))
         }
     }
 }

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.wenmq.lifecycle.plugin'
 
-//apply plugin: 'auto-inject'
+apply plugin: 'autoinject'
 
-//autoInject {
-//    showLog = true
-//    ignorePackages = ['android', 'com/google']
-//}
+autoInject {
+    showLog = true
+    ignorePackages = ['android', 'com/google']
+}
 
 
 android {
@@ -50,5 +50,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.alibaba.android:alpha:1.0.0.1@aar'
     implementation project(path: ':mt-kernel')
-//    implementation 'com.eastwood.common:auto-inject:1.0.0'
+    implementation 'com.eastwood.common:autoinjectcore:1.0.0'
 }
