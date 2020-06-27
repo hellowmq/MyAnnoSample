@@ -25,7 +25,7 @@ public class ApplicationTaskFactory {
         this.context = context;
     }
 
-    @AutoBowArrow(target = "application")
+    @AutoBowArrow(target = "application", priority = 999)
     public static class AutoTaskA implements IAutoBowArrow {
         public AutoTaskA() {
         }
@@ -43,7 +43,7 @@ public class ApplicationTaskFactory {
         }
     }
 
-    @AutoBowArrow(target = "application")
+    @AutoBowArrow(target = "application", priority = 0)
     public static class AutoTaskB implements IAutoBowArrow {
 
         public AutoTaskB() {
@@ -62,7 +62,7 @@ public class ApplicationTaskFactory {
         }
     }
 
-    @AutoBowArrow(target = "application")
+    @AutoBowArrow(target = "application", priority = 9)
     public static class AutoTaskC implements IAutoBowArrow {
         public AutoTaskC() {
         }

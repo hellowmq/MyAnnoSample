@@ -3,6 +3,7 @@ package com.eastwood.tools.plugins.autoinject.adapter
 import com.eastwood.tools.plugins.autoinject.AutoClassInfo
 import com.eastwood.tools.plugins.autoinject.AutoInjector
 import com.eastwood.tools.plugins.autoinject.AutoType
+import com.eastwood.tools.plugins.autoinject.Logger
 import org.gradle.api.GradleScriptException
 import org.objectweb.asm.*
 
@@ -11,6 +12,7 @@ class BowArrowClassAdapter extends ClassVisitor {
     private final static String AUTO_BOW_ANNOTATION_BYTECODE = "Lcom/eastwood/common/autoinject/AutoBow;"
     private final static String AUTO_ARROW_ANNOTATION_BYTECODE = "Lcom/eastwood/common/autoinject/AutoArrow;"
     private final static String AUTO_BOW_ARROW_ANNOTATION_BYTECODE = "Lcom/eastwood/common/autoinject/AutoBowArrow;"
+
     private final static String AUTO_BOW_INTERFACE_BYTECODE = "com/eastwood/common/autoinject/IAutoBow"
     private final static String AUTO_ARROW_INTERFACE_BYTECODE = "com/eastwood/common/autoinject/IAutoArrow"
     private final static String AUTO_BOW_ARROW_INTERFACE_BYTECODE = "com/eastwood/common/autoinject/IAutoBowArrow"
@@ -41,7 +43,10 @@ class BowArrowClassAdapter extends ClassVisitor {
 
     @Override
     AnnotationVisitor visitAnnotation(String desc, boolean visible) {
-        if (AUTO_BOW_ANNOTATION_BYTECODE == desc || AUTO_ARROW_ANNOTATION_BYTECODE == desc || AUTO_BOW_ARROW_ANNOTATION_BYTECODE == desc) {
+        if (AUTO_BOW_ANNOTATION_BYTECODE == desc
+                || AUTO_ARROW_ANNOTATION_BYTECODE == desc
+                || AUTO_BOW_ARROW_ANNOTATION_BYTECODE == desc
+        ) {
             AnnotationVisitor annotationVisitor = super.visitAnnotation(desc, visible)
             OnAnnotationValueListener valueListener = new OnAnnotationValueListener() {
                 @Override
@@ -50,7 +55,7 @@ class BowArrowClassAdapter extends ClassVisitor {
                         autoClassInfo = new AutoClassInfo()
                         getMethodDescList = new ArrayList<>()
                     }
-
+                    Logger.e("----------visitAnnotation-----------" + name  + " " + value.toString())
                     switch (name) {
                         case "target":
                             autoClassInfo.target = value
@@ -76,6 +81,7 @@ class BowArrowClassAdapter extends ClassVisitor {
     @Override
     MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
         if (autoClassInfo != null) {
+            Logger.e("--------visitMethod-------------" + autoClassInfo.toString())
             if (name == '<init>') {
                 if (autoClassInfo.initDesc != null) {
                     throw new GradleScriptException("class " + classname + " has multi-<init>.", null)
